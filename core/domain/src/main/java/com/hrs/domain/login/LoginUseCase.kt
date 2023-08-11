@@ -17,7 +17,7 @@ class LoginUseCase @Inject constructor( val loginRepository: LoginRepository) :
     override fun execute(params: Params): Flow<NetworkResource<UserInfo>> {
         return loginRepository.login(
             LoginRequest(
-                userName = params.id,
+                email = params.id,
                 password = params.password
             )
         ).mapResult {

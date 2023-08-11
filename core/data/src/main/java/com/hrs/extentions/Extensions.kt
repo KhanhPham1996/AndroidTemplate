@@ -1,5 +1,7 @@
 package com.hrs.extentions
 
+import android.util.Base64
+import java.nio.charset.StandardCharsets
 import java.util.*
 import kotlin.math.roundToInt
 
@@ -15,7 +17,9 @@ fun Date.isAtToday(): Boolean {
             && now.get(Calendar.MONTH) == target.get(Calendar.MONTH)
             && now.get(Calendar.DAY_OF_MONTH) == target.get(Calendar.DAY_OF_MONTH)
 }
-
+fun String.encodeBase64(): String {
+    return Base64.encodeToString(this.toByteArray(StandardCharsets.UTF_8), Base64.DEFAULT)
+}
 fun String.Companion.empty() = ""
 
 inline fun String?.ifNotNullOrEmpty(resolve: (s: String) -> Unit) {

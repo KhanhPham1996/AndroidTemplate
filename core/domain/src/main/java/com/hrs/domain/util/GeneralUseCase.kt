@@ -6,7 +6,7 @@ abstract class GeneralUseCase<out Type, in Params> where Type : Any {
 
     abstract fun execute(params: Params): Flow<com.hrs.network.NetworkResource<Type>>
 
-    operator fun invoke(params: Params): Flow<com.hrs.network.NetworkResource<Type>> = execute(params)
+    protected operator fun invoke(params: Params): Flow<com.hrs.network.NetworkResource<Type>> = execute(params)
 
     open fun onCleared() {}
 

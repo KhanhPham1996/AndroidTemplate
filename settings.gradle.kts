@@ -17,6 +17,7 @@ rootProject.name = "MutipleModuleApp"
 
 include(":app")
 include(":core")
+include(":SuperApp")
 include(":core:data")
 include(":core:domain")
 include(":core:common")

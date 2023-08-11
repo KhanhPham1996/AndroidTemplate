@@ -20,6 +20,7 @@ import com.hrs.di.scopes.RetrofitUploadFile
 import com.hrs.di.scopes.TokenInterceptor
 import com.hrs.fuction.login.data.Authenticator
 import com.hrs.fuction.login.network.AuthServiceApi
+import com.hrs.mutiplemoduleapp.core.data.BuildConfig
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -73,10 +74,10 @@ class NetworkModule {
     @LoggingInterceptor
     @Provides
     fun providerLoggingInterceptor(): Interceptor = HttpLoggingInterceptor().apply {
-//        level = when (BuildConfig.DEBUG) {
-//            true -> HttpLoggingInterceptor.Level.BODY
-//            else -> HttpLoggingInterceptor.Level.NONE
-//        }
+        level = when (BuildConfig.DEBUG) {
+            true -> HttpLoggingInterceptor.Level.BODY
+            else -> HttpLoggingInterceptor.Level.NONE
+        }
     }
 
 

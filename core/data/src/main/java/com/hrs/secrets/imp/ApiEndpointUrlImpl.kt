@@ -5,5 +5,5 @@ import com.hrs.secrets.ApiEndpointUrl
 class ApiEndpointUrlImpl: ApiEndpointUrl {
 
     override val value: String
-        get() = "https://api-xoox.brickmate.kr/"
+        get() = "https://api-test.paypense.com/api/v1/"
 }

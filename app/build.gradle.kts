@@ -3,6 +3,7 @@ import extensions.daggerHilt
 import dependencies.Dependencies
 import extensions.addTestsDependencies
 import extensions.coil
+import extensions.lifecycleScope
 
 plugins {
     id(ScriptPlugins.android_app)
@@ -39,6 +40,8 @@ dependencies {
     implementation(Dependencies.CONSTRAIN_LAYOUT)
     daggerHilt()
     addTestsDependencies()
+
+    lifecycleScope()
     coil()
 
 }

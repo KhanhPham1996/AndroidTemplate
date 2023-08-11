@@ -23,11 +23,11 @@ abstract class NetworkRepository {
         flow {
             emit(NetworkResource.Loading)
             when (val rs = execute(call = call)) {
-                is Either.Left ->{
-                    emit(com.hrs.network.NetworkResource.Error(rs.a))
+                is Left ->{
+                    emit(NetworkResource.Error(rs.a))
                 }
                 is Right ->{
-                    emit(com.hrs.network.NetworkResource.Success(rs.b))
+                    emit(NetworkResource.Success(rs.b))
                 }
             }
         }.flowOn(Dispatchers.IO).catch { e ->
