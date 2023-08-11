@@ -9,6 +9,7 @@ import ProductFlavorDevelop
 import ProductFlavorProduction
 import ProductFlavorStaging
 import dependencies.Dependencies
+import extensions.addTestsDependencies
 import extensions.implementation
 
 plugins {
@@ -112,4 +113,5 @@ dependencies {
     implementation(Dependencies.COROUTINES)
     implementation(Dependencies.COROUTINES_ANDROID)
     api(Dependencies.TIMBER)
+    addTestsDependencies()
 }
